@@ -33,6 +33,7 @@ body{
   background:#F7F7F5;
   color:var(--marino);
   -webkit-font-smoothing:antialiased;
+  zoom:1.1;
 }
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px 80px;}
@@ -54,10 +55,18 @@ header.top .wrap{padding-bottom:20px;position:relative;z-index:2;}
 }
 .bars-bg span{width:26px;background:var(--verde);border-radius:2px 2px 0 0;}
 .header-top-row{display:flex;justify-content:flex-end;margin-bottom:6px;}
-.info-publica{
-  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gris-azul);font-weight:700;
+.info-publica-box{
+  display:block;text-align:left;text-decoration:none;
+  background:#F0F1F0;border:1px solid var(--gris-linea);border-radius:8px;
+  padding:8px 14px;transition:background .15s ease;
 }
+.info-publica-box:hover{background:#E6E8E6;}
+.info-publica-box .ip-title{
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gris-azul);font-weight:700;margin-bottom:3px;
+}
+.info-publica-box .ip-line{font-size:10.5px;color:var(--marino);line-height:1.5;}
+.info-publica-box .ip-line b{font-weight:700;}
 .eyebrow{
   font-size:10px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--verde);font-weight:700;margin:0 0 18px;
@@ -248,7 +257,7 @@ footer{
 <header class="top">
   <div class="wrap">
     <div class="header-top-row">
-      <span class="info-publica">Información pública</span>
+      <a class="info-publica-box" id="infoPublicaBox" href="https://www.dipres.gob.cl/598/w3-propertyvalue-24862.html" target="_blank" rel="noopener"></a>
     </div>
     <h1 class="main-title">Tracker — Informe de Finanzas Públicas (IFP)</h1>
     <div class="eyebrow">Dirección de Presupuestos · Ministerio de Hacienda</div>
@@ -468,6 +477,13 @@ function renderMeta(){
   document.getElementById("changeSub").textContent = `Revisiones y novedades respecto del informe anterior (${r.prevLabel})`;
   document.getElementById("projSub").textContent = "Escenarios macro-fiscales de mediano plazo";
   document.getElementById("lastUpdate").textContent = `Última actualización cargada: ${r.fullLabel}`;
+
+  document.getElementById("infoPublicaBox").innerHTML = `
+    <div class="ip-title">Información pública</div>
+    <div class="ip-line">Periodicidad: <b>Trimestral (IFP)</b></div>
+    <div class="ip-line">Última actualización: <b>${r.published}</b></div>
+    <div class="ip-line">Fuente: <b>Dirección de Presupuestos (Dipres)</b></div>
+  `;
 }
 
 function renderKpis(){
