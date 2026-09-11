@@ -42,60 +42,51 @@ body{
 header.top{
   background:#fff;
   color:var(--marino);
-  padding:26px 0 0;
+  padding:30px 0 0;
   position:relative;
-  overflow:hidden;
   border-bottom:2px solid var(--verde);
 }
-header.top .wrap{padding-bottom:20px;position:relative;z-index:2;}
-.bars-bg{
-  position:absolute;right:-30px;top:10px;
-  display:flex;align-items:flex-end;gap:10px;
-  opacity:0.10;z-index:1;
-}
-.bars-bg span{width:26px;background:var(--verde);border-radius:2px 2px 0 0;}
-.header-top-row{display:flex;justify-content:flex-end;margin-bottom:6px;}
-.info-publica-box{
-  display:block;text-align:left;text-decoration:none;
-  background:#F0F1F0;border:1px solid var(--gris-linea);border-radius:8px;
-  padding:8px 14px;transition:background .15s ease;
-}
-.info-publica-box:hover{background:#E6E8E6;}
-.info-publica-box .ip-title{
-  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gris-azul);font-weight:700;margin-bottom:3px;
-}
-.info-publica-box .ip-line{font-size:10.5px;color:var(--marino);line-height:1.5;}
-.info-publica-box .ip-line b{font-weight:700;}
-.eyebrow{
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--verde);font-weight:700;margin:0 0 18px;
+header.top .wrap{padding-bottom:18px;position:relative;}
+
+.header-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:28px;flex-wrap:wrap;
 }
 h1.main-title{
-  font-family:'Aller';font-weight:700;font-size:24px;line-height:1.25;
-  margin:0 0 6px;letter-spacing:0;color:var(--marino);
+  font-family:'Aller';font-weight:700;font-size:27px;line-height:1.15;
+  margin:0;letter-spacing:-.01em;color:var(--verde);
 }
-.subtitle{
-  color:var(--gris-azul);font-size:13px;margin:0 0 22px;
+.title-sub{
+  font-size:12.5px;color:var(--gris-azul);margin:5px 0 0;line-height:1.4;
 }
+
+.info-publica-box{
+  display:block;text-align:right;text-decoration:none;flex-shrink:0;
+}
+.info-publica-box .ip-title{
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--verde);font-weight:700;margin-bottom:4px;
+}
+.info-publica-box .ip-line{font-size:11.5px;color:var(--gris-azul);line-height:1.65;}
+.info-publica-box:hover .ip-line{color:var(--marino);}
 
 /* tabs */
+.tabs-row{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;flex-wrap:wrap;margin-top:24px;
+}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
 .tab-btn{
-  font-family:'Aller';font-weight:700;font-size:13.5px;letter-spacing:.04em;
+  font-family:'Aller';font-weight:700;font-size:13px;letter-spacing:.01em;
   background:#fff;color:var(--gris-azul);border:1px solid var(--gris-azul-claro);
-  padding:9px 18px;border-radius:20px;cursor:pointer;transition:all .15s ease;
+  padding:8px 18px;border-radius:6px;cursor:pointer;transition:all .15s ease;
 }
-.tab-btn:hover{background:var(--fondo);}
-.tab-btn.active{background:var(--verde);color:#fff;border-color:var(--verde);}
-.tab-ghost{
-  font-size:12px;color:var(--gris-azul-claro);padding:9px 14px;letter-spacing:.03em;
-  border:1px dashed var(--gris-azul-claro);border-radius:20px;
-}
+.tab-btn:hover{background:var(--fondo);color:var(--marino);}
+.tab-btn.active{background:var(--gris-azul);color:#fff;border-color:var(--gris-azul);}
 
 .meta-row{
-  display:flex;gap:22px;margin-top:20px;flex-wrap:wrap;
-  font-size:12.5px;color:var(--gris-azul);
+  display:flex;gap:22px;margin-top:16px;flex-wrap:wrap;
+  font-size:12px;color:var(--gris-azul);
 }
 .meta-row b{color:var(--marino);font-weight:700;}
 
@@ -237,6 +228,25 @@ canvas#projChart{max-height:320px;}
 .holguras-box p:last-child{margin-bottom:0;}
 .holguras-box .hb-sub{font-size:12.5px;color:var(--gris-azul);background:#fff;border-radius:6px;padding:9px 12px;}
 
+/* ---------- BOTÓN MANUAL DE ACTUALIZACIÓN ---------- */
+.btn-manual{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;font-size:12px;font-weight:300;font-family:'Aller',sans-serif;border:1px solid var(--gris-azul-claro);border-radius:5px;background:transparent;color:var(--gris-azul);cursor:pointer;transition:all .15s}
+.btn-manual:hover{background:var(--fondo);color:#000}
+
+/* ---------- MODAL ---------- */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:#fff;border-radius:10px;max-width:680px;width:90%;padding:28px 28px 24px;box-shadow:0 8px 32px rgba(0,0,0,.18);position:relative;max-height:86vh;overflow-y:auto}
+.modal-close{position:absolute;top:14px;right:16px;font-size:18px;background:none;border:none;cursor:pointer;color:var(--gris-azul);line-height:1}
+.modal-title{font-size:14px;font-weight:700;color:var(--verde);margin-bottom:4px}
+.modal-sub{font-size:11px;color:var(--gris-azul);font-weight:300;margin-bottom:18px}
+.modal-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.modal-step-body{font-size:12px;font-weight:300;color:#000;line-height:1.5}
+.modal-step-body b{font-weight:700}
+.modal-step-body a{color:var(--gris-azul);text-decoration:underline}
+.modal-path{display:inline-block;margin-top:6px;padding:6px 10px;background:var(--fondo);border:1px solid var(--gris-linea);border-radius:4px;font-size:11.5px;color:var(--marino);word-break:break-all}
+.modal-divider{border:none;border-top:1px solid var(--gris-linea);margin:16px 0}
+.modal-note{font-size:11px;color:var(--gris-azul);font-weight:300;line-height:1.5;font-style:italic}
+
 footer{
   margin-top:40px;padding:24px 0;border-top:1px solid var(--gris-linea);
   font-size:11.5px;color:var(--gris-azul);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
@@ -247,8 +257,10 @@ footer{
 }
 @media(max-width:560px){
   .kpi-grid{grid-template-columns:1fr;}
-  h1.main-title{font-size:19px;}
+  h1.main-title{font-size:21px;}
   .wrap{padding:0 16px 60px;}
+  .info-publica-box{text-align:left;}
+  .tabs-row{margin-top:18px;}
 }
 </style>
 </head>
@@ -256,13 +268,17 @@ footer{
 
 <header class="top">
   <div class="wrap">
-    <div class="header-top-row">
+    <div class="header-row">
+      <div>
+        <h1 class="main-title">IFP Tracker</h1>
+        <p class="title-sub">Informe de Finanzas Públicas · Dirección de Presupuestos, Ministerio de Hacienda</p>
+      </div>
       <a class="info-publica-box" id="infoPublicaBox" href="https://www.dipres.gob.cl/598/w3-propertyvalue-24862.html" target="_blank" rel="noopener"></a>
     </div>
-    <h1 class="main-title">Tracker — Informe de Finanzas Públicas (IFP)</h1>
-    <div class="eyebrow">Dirección de Presupuestos · Ministerio de Hacienda</div>
 
-    <div class="tabs" id="tabs"></div>
+    <div class="tabs-row">
+      <div class="tabs" id="tabs"></div>
+    </div>
     <div class="meta-row" id="metaRow"></div>
   </div>
 </header>
@@ -328,6 +344,12 @@ footer{
       <p class="source-note" id="projNote"></p>
     </div>
   </section>
+
+  <div style="text-align:right;padding:16px 0 4px">
+    <button class="btn-manual" onclick="document.getElementById('updateModal').classList.add('open')">
+      Manual de actualización
+    </button>
+  </div>
 
   <footer>
     <span>Fuente: Dirección de Presupuestos (Dipres), Informe de Finanzas Públicas. www.dipres.gob.cl</span>
@@ -480,9 +502,9 @@ function renderMeta(){
 
   document.getElementById("infoPublicaBox").innerHTML = `
     <div class="ip-title">Información pública</div>
-    <div class="ip-line">Periodicidad: <b>Trimestral (IFP)</b></div>
-    <div class="ip-line">Última actualización: <b>${r.published}</b></div>
-    <div class="ip-line">Fuente: <b>Dirección de Presupuestos (Dipres)</b></div>
+    <div class="ip-line">Periodicidad: Trimestral (IFP)</div>
+    <div class="ip-line">Última actualización: ${r.published}</div>
+    <div class="ip-line">Fuente: Dirección de Presupuestos ↗</div>
   `;
 }
 
@@ -680,6 +702,42 @@ function renderAll(){
 }
 
 loadState().then(renderAll);
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') document.getElementById('updateModal').classList.remove('open');
+});
 </script>
+
+<div class="modal-overlay" id="updateModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('updateModal').classList.remove('open')">✕</button>
+    <div class="modal-title">Manual de actualización</div>
+    <div class="modal-sub">Cómo incorporar un nuevo Informe de Finanzas Públicas al tracker. Toma unos minutos y se hace una vez por trimestre.</div>
+
+    <div class="modal-step">
+      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">1.</div>
+      <div class="modal-step-body"><b>Descargar el PDF.</b> Dipres publica el IFP cada trimestre en <a href="https://www.dipres.gob.cl/598/w3-propertyvalue-24862.html" target="_blank" rel="noopener">dipres.gob.cl</a>. Descargar el informe completo del trimestre nuevo (no el resumen ni las minutas).</div>
+    </div>
+
+    <div class="modal-step">
+      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">2.</div>
+      <div class="modal-step-body"><b>Subirlo al proyecto.</b> Abrir el proyecto del IFP Tracker en Claude y adjuntar el PDF a la conversación. No hace falta escribir instrucciones: el proyecto ya sabe qué hacer con un IFP nuevo.</div>
+    </div>
+
+    <div class="modal-step">
+      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">3.</div>
+      <div class="modal-step-body"><b>Se crea la pestaña del trimestre.</b> Claude identifica el trimestre, extrae las cifras y arma una pestaña nueva con todas las secciones: palabras del Director, resumen ejecutivo, KPIs con variación respecto del informe anterior, qué cambió, holguras fiscales y proyecciones. La pestaña más reciente queda a la izquierda y las anteriores se conservan intactas para comparar.</div>
+    </div>
+
+    <div class="modal-step">
+      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">4.</div>
+      <div class="modal-step-body"><b>Subir el HTML a Google Drive: publicación final del monitor.</b> Una vez generado el HTML con todas sus hojas actualizadas, subir el archivo final a la siguiente ruta de la unidad compartida:<br><span class="modal-path">G:\Unidades compartidas\MFO-Dashboards\Monitores\Estrategia</span></div>
+    </div>
+
+    <hr class="modal-divider">
+    <div class="modal-note">El dashboard es un archivo HTML único y autocontenido: tipografías, estilos y datos viajan dentro del mismo archivo, así que basta con reemplazarlo en la carpeta para publicar la actualización.</div>
+  </div>
+</div>
+
 </body>
 </html>
