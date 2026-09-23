@@ -36,57 +36,80 @@ body{
   zoom:1.1;
 }
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px 20px;}
+
+/* ---------- TARJETA BLANCA ÚNICA (formato CPI Tracker) ---------- */
+.page-card{
+  max-width:1040px;margin:30px auto 40px;background:#fff;
+  border-radius:14px;box-shadow:0 1px 4px rgba(27,33,39,0.06);
+  padding-bottom:10px;overflow:hidden;
+}
+@media(max-width:760px){ .page-card{margin:0;border-radius:0;} }
 
 /* ---------- HEADER ---------- */
 header.top{
-  background:#fff;
+  background:transparent;
   color:var(--marino);
-  padding:30px 0 0;
+  padding:22px 0 0;
   position:relative;
-  border-bottom:2px solid var(--verde);
 }
-header.top .wrap{padding-bottom:18px;position:relative;}
-
-.header-row{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  gap:28px;flex-wrap:wrap;
+header.top .wrap{padding-bottom:0;position:relative;z-index:2;}
+.bars-bg{
+  position:absolute;right:-30px;top:10px;
+  display:flex;align-items:flex-end;gap:10px;
+  opacity:0.10;z-index:1;
 }
-h1.main-title{
-  font-family:'Aller';font-weight:700;font-size:27px;line-height:1.15;
-  margin:0;letter-spacing:-.01em;color:var(--verde);
+.bars-bg span{width:26px;background:var(--verde);border-radius:2px 2px 0 0;}
+/* Header con el mismo formato del US CPI Tracker */
+.header-top-row{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:20px;margin-bottom:1.25rem;
 }
-.title-sub{
-  font-size:12.5px;color:var(--gris-azul);margin:5px 0 0;line-height:1.4;
-}
-
 .info-publica-box{
-  display:block;text-align:right;text-decoration:none;flex-shrink:0;
+  display:flex;flex-direction:column;align-items:flex-end;gap:2px;
+  text-decoration:none;background:none;border:none;padding:0;transition:opacity .15s ease;
 }
+.info-publica-box:hover{opacity:.75;}
 .info-publica-box .ip-title{
-  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--verde);font-weight:700;margin-bottom:4px;
+  font-size:10px;font-weight:700;letter-spacing:.08em;color:#1A9FCC;
+  text-transform:uppercase;line-height:1;margin:0;
 }
-.info-publica-box .ip-line{font-size:11.5px;color:var(--gris-azul);line-height:1.65;}
-.info-publica-box:hover .ip-line{color:var(--marino);}
+.info-publica-box .ip-line{
+  font-size:10px;font-weight:300;color:#969696;line-height:1.3;white-space:nowrap;
+}
+.info-publica-box .ip-line b{font-weight:300;color:#969696;}
+h1.main-title{
+  font-family:'Aller';line-height:1.1;font-size:26px;font-weight:700;
+  color:var(--verde);letter-spacing:-.01em;margin:0;
+}
+.eyebrow{
+  font-size:13px;font-weight:300;letter-spacing:0;text-transform:none;
+  color:var(--gris-azul);margin:5px 0 0;
+}
+.subtitle{
+  color:var(--gris-azul);font-size:13px;margin:0 0 22px;
+}
 
 /* tabs */
-.tabs-row{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:20px;flex-wrap:wrap;margin-top:24px;
+.tabs{
+  display:flex;gap:5px;margin:0 0 1.25rem;padding-bottom:1.1rem;
+  border-bottom:1px solid #E6E6E6;flex-wrap:wrap;align-items:center;
 }
-.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
 .tab-btn{
-  font-family:'Aller';font-weight:700;font-size:13px;letter-spacing:.01em;
-  background:#fff;color:var(--gris-azul);border:1px solid var(--gris-azul-claro);
-  padding:8px 18px;border-radius:6px;cursor:pointer;transition:all .15s ease;
+  font-family:'Aller';padding:6px 14px;font-size:12px;border-radius:4px;
+  cursor:pointer;transition:all .15s;font-weight:300;letter-spacing:0;
+  border:1px solid #BEBEBE;background:transparent;color:#000;
 }
-.tab-btn:hover{background:var(--fondo);color:var(--marino);}
-.tab-btn.active{background:var(--gris-azul);color:#fff;border-color:var(--gris-azul);}
+.tab-btn:hover{background:#E6E6E6;}
+.tab-btn.active{background:var(--gris-azul);border-color:var(--gris-azul);color:#fff;font-weight:700;}
+.tab-ghost{
+  font-size:12px;color:var(--gris-azul-claro);padding:9px 14px;letter-spacing:.03em;
+  border:1px dashed var(--gris-azul-claro);border-radius:7px;
+}
 
 .meta-row{
-  display:flex;gap:22px;margin-top:16px;flex-wrap:wrap;
-  font-size:12px;color:var(--gris-azul);
+  display:flex;gap:22px;margin-top:0;flex-wrap:wrap;
+  font-size:12.5px;color:var(--gris-azul);
 }
 .meta-row b{color:var(--marino);font-weight:700;}
 
@@ -95,7 +118,7 @@ section{
   padding:24px 26px;background:#fff;border:1px solid var(--gris-linea);
   border-radius:12px;margin-top:20px;
 }
-section:first-of-type{margin-top:28px;}
+section:first-of-type{margin-top:20px;}
 .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;}
 .section-num{
   font-size:12px;color:var(--verde);font-weight:700;letter-spacing:.08em;
@@ -118,28 +141,34 @@ section:first-of-type{margin-top:28px;}
   font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--marino);
   font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;
 }
-.tt-wrap{position:relative;display:inline-flex;cursor:help;text-transform:none;}
+.tt-wrap{position:relative;display:inline-flex;cursor:help;text-transform:none;z-index:1;}
+.tt-wrap:hover,.tt-wrap.tt-open{z-index:200;}
 .tt-icon{
   width:14px;height:14px;border-radius:50%;background:var(--gris-azul-claro);color:#fff;
   font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;
   font-style:normal;letter-spacing:0;flex:none;
+  transition:background .15s ease;
 }
-.tt-wrap:hover .tt-icon{background:var(--verde);}
+.tt-wrap:hover .tt-icon,.tt-wrap.tt-open .tt-icon{background:var(--verde);}
 .tt-box{
-  visibility:hidden;opacity:0;position:absolute;top:100%;left:0;margin-top:8px;
+  visibility:hidden;opacity:0;pointer-events:none;
+  display:block;position:absolute;top:100%;left:0;margin-top:8px;
   background:var(--marino);color:#fff;padding:11px 13px;border-radius:8px;
   box-shadow:0 8px 20px rgba(27,33,39,0.25);font-size:11.5px;font-weight:400;
-  text-align:left;white-space:normal;width:230px;z-index:50;transition:opacity .15s ease;
+  text-align:left;white-space:normal;width:230px;z-index:200;transition:opacity .15s ease;
   text-transform:none;letter-spacing:normal;line-height:1.5;
 }
 .tt-box::before{
   content:'';position:absolute;bottom:100%;left:14px;
   border:6px solid transparent;border-bottom-color:var(--marino);
 }
-.tt-wrap:hover .tt-box{visibility:visible;opacity:1;}
-.tt-box .tt-title{font-weight:700;color:var(--verde);font-size:12px;margin-bottom:5px;
+/* si el tooltip queda pegado al borde derecho, se abre hacia la izquierda */
+.tt-wrap.tt-left .tt-box{left:auto;right:0;}
+.tt-wrap.tt-left .tt-box::before{left:auto;right:14px;}
+.tt-wrap:hover .tt-box,.tt-wrap.tt-open .tt-box{visibility:visible;opacity:1;pointer-events:auto;}
+.tt-box .tt-title{display:block;font-weight:700;color:var(--verde);font-size:12px;margin-bottom:5px;
   border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:5px;text-transform:none;letter-spacing:normal;}
-.tt-box .tt-def{color:#D8DEE2;}
+.tt-box .tt-def{display:block;color:#D8DEE2;}
 .kpi-value{font-family:'Aller';font-weight:300;font-size:21px;line-height:1.3;color:var(--marino);display:flex;align-items:baseline;flex-wrap:wrap;gap:4px;}
 .kpi-value small{font-size:11px;font-weight:400;color:var(--gris-azul);white-space:nowrap;}
 .kpi-foot{display:flex;align-items:center;gap:8px;margin-top:9px;}
@@ -228,27 +257,8 @@ canvas#projChart{max-height:320px;}
 .holguras-box p:last-child{margin-bottom:0;}
 .holguras-box .hb-sub{font-size:12.5px;color:var(--gris-azul);background:#fff;border-radius:6px;padding:9px 12px;}
 
-/* ---------- BOTÓN MANUAL DE ACTUALIZACIÓN ---------- */
-.btn-manual{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;font-size:12px;font-weight:300;font-family:'Aller',sans-serif;border:1px solid var(--gris-azul-claro);border-radius:5px;background:transparent;color:var(--gris-azul);cursor:pointer;transition:all .15s}
-.btn-manual:hover{background:var(--fondo);color:#000}
-
-/* ---------- MODAL ---------- */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:center;justify-content:center}
-.modal-overlay.open{display:flex}
-.modal-box{background:#fff;border-radius:10px;max-width:680px;width:90%;padding:28px 28px 24px;box-shadow:0 8px 32px rgba(0,0,0,.18);position:relative;max-height:86vh;overflow-y:auto}
-.modal-close{position:absolute;top:14px;right:16px;font-size:18px;background:none;border:none;cursor:pointer;color:var(--gris-azul);line-height:1}
-.modal-title{font-size:14px;font-weight:700;color:var(--verde);margin-bottom:4px}
-.modal-sub{font-size:11px;color:var(--gris-azul);font-weight:300;margin-bottom:18px}
-.modal-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.modal-step-body{font-size:12px;font-weight:300;color:#000;line-height:1.5}
-.modal-step-body b{font-weight:700}
-.modal-step-body a{color:var(--gris-azul);text-decoration:underline}
-.modal-path{display:inline-block;margin-top:6px;padding:6px 10px;background:var(--fondo);border:1px solid var(--gris-linea);border-radius:4px;font-size:11.5px;color:var(--marino);word-break:break-all}
-.modal-divider{border:none;border-top:1px solid var(--gris-linea);margin:16px 0}
-.modal-note{font-size:11px;color:var(--gris-azul);font-weight:300;line-height:1.5;font-style:italic}
-
 footer{
-  margin-top:40px;padding:24px 0;border-top:1px solid var(--gris-linea);
+  margin-top:30px;padding:24px 0;border-top:1px solid var(--gris-linea);
   font-size:11.5px;color:var(--gris-azul);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
 }
 
@@ -259,26 +269,62 @@ footer{
   .kpi-grid{grid-template-columns:1fr;}
   h1.main-title{font-size:21px;}
   .wrap{padding:0 16px 60px;}
-  .info-publica-box{text-align:left;}
-  .tabs-row{margin-top:18px;}
+}
+
+/* ---------- MANUAL DE ACTUALIZACIÓN ---------- */
+.manual-row{display:flex;justify-content:flex-end;margin-top:14px;}
+.manual-btn{
+  font-family:'Aller';font-size:12px;font-weight:700;letter-spacing:.02em;
+  color:var(--gris-azul);background:#fff;border:1px solid var(--gris-linea);
+  border-radius:6px;padding:8px 14px;cursor:pointer;transition:all .15s ease;
+}
+.manual-btn:hover{background:var(--gris-azul);border-color:var(--gris-azul);color:#fff;}
+.manual-overlay{
+  position:fixed;inset:0;background:rgba(27,33,39,0.55);z-index:900;
+  display:none;align-items:flex-start;justify-content:center;padding:40px 20px;
+}
+.manual-overlay.open{display:flex;}
+.manual-modal{
+  background:#fff;border-radius:10px;max-width:640px;width:100%;
+  max-height:calc(100vh - 80px);overflow-y:auto;
+  box-shadow:0 20px 50px rgba(27,33,39,0.35);padding:26px 28px 24px;
+}
+.manual-modal h3{font-size:18px;font-weight:700;margin:0 0 4px;color:var(--marino);}
+.manual-modal .mm-sub{font-size:12.5px;color:var(--gris-azul);margin:0 0 18px;}
+.manual-close{
+  float:right;border:none;background:none;font-size:20px;line-height:1;
+  color:var(--gris-azul);cursor:pointer;padding:0 0 0 12px;
+}
+.manual-close:hover{color:var(--marino);}
+.mm-step{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--gris-linea);}
+.mm-num{
+  flex:none;width:22px;height:22px;border-radius:50%;background:var(--verde);color:#fff;
+  font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.mm-step h4{font-size:13.5px;font-weight:700;margin:0 0 3px;color:var(--marino);}
+.mm-step p{font-size:12.5px;color:var(--gris-azul);margin:0;line-height:1.55;}
+.mm-step code{
+  font-family:monospace;font-size:11.5px;background:#F0F1F0;
+  border:1px solid var(--gris-linea);border-radius:4px;padding:1px 5px;color:var(--marino);
+  word-break:break-all;
 }
 </style>
 </head>
 <body>
 
+<div class="page-card">
+
 <header class="top">
   <div class="wrap">
-    <div class="header-row">
+    <div class="header-top-row">
       <div>
         <h1 class="main-title">IFP Tracker</h1>
-        <p class="title-sub">Informe de Finanzas Públicas · Dirección de Presupuestos, Ministerio de Hacienda</p>
+        <div class="eyebrow">Informe de Finanzas Públicas · Dirección de Presupuestos</div>
       </div>
       <a class="info-publica-box" id="infoPublicaBox" href="https://www.dipres.gob.cl/598/w3-propertyvalue-24862.html" target="_blank" rel="noopener"></a>
     </div>
 
-    <div class="tabs-row">
-      <div class="tabs" id="tabs"></div>
-    </div>
+    <div class="tabs" id="tabs"></div>
     <div class="meta-row" id="metaRow"></div>
   </div>
 </header>
@@ -298,8 +344,7 @@ footer{
   <section id="execSummarySection">
     <div class="section-head">
       <div>
-        <p class="section-title">Resumen ejecutivo del informe</p>
-        <p class="section-sub" id="execSummarySub"></p>
+        <p class="section-title">Resumen Ejecutivo</p>
       </div>
     </div>
     <div id="execSummaryBox"></div>
@@ -308,7 +353,7 @@ footer{
   <section id="kpiSection">
     <div class="section-head">
       <div>
-        <p class="section-title">Cifras del trimestre</p>
+        <p class="section-title">Cifras del Trimestre</p>
         <p class="section-sub" id="kpiSub"></p>
       </div>
     </div>
@@ -322,7 +367,7 @@ footer{
   <section id="changeSection">
     <div class="section-head">
       <div>
-        <p class="section-title">Qué cambió este trimestre</p>
+        <p class="section-title">Qué Cambió este Trimestre</p>
         <p class="section-sub" id="changeSub"></p>
       </div>
     </div>
@@ -343,19 +388,59 @@ footer{
       <div class="legend" id="legend"></div>
       <p class="source-note" id="projNote"></p>
     </div>
+    <div class="manual-row">
+      <button class="manual-btn" id="manualBtn" type="button">Manual de actualización</button>
+    </div>
   </section>
-
-  <div style="text-align:right;padding:16px 0 4px">
-    <button class="btn-manual" onclick="document.getElementById('updateModal').classList.add('open')">
-      Manual de actualización
-    </button>
-  </div>
 
   <footer>
     <span>Fuente: Dirección de Presupuestos (Dipres), Informe de Finanzas Públicas. www.dipres.gob.cl</span>
     <span id="lastUpdate"></span>
   </footer>
 
+</div>
+
+</div><!-- /page-card -->
+
+
+<div class="manual-overlay" id="manualOverlay" role="dialog" aria-modal="true" aria-labelledby="manualTitle">
+  <div class="manual-modal">
+    <button class="manual-close" id="manualClose" type="button" aria-label="Cerrar">&times;</button>
+    <h3 id="manualTitle">Manual de actualización</h3>
+    <p class="mm-sub">Pasos para incorporar un nuevo Informe de Finanzas Públicas al tracker.</p>
+
+    <div class="mm-step">
+      <div class="mm-num">1</div>
+      <div>
+        <h4>Descargar el nuevo IFP</h4>
+        <p>Ir a la sección de publicaciones de Dipres y descargar el PDF del Informe de Finanzas Públicas del trimestre recién publicado. Guardarlo en <code>W:\4. Informes\-- Informes Trimestrales\BC - Informe de Finanzas Públicas Dirección de Presupuestos</code>.</p>
+      </div>
+    </div>
+
+    <div class="mm-step">
+      <div class="mm-num">2</div>
+      <div>
+        <h4>Subir el PDF a Claude</h4>
+        <p>Abrir el proyecto del IFP Tracker en Claude, adjuntar el PDF y pedir que extraiga los datos y agregue el nuevo trimestre. Se actualizan automáticamente las palabras del Director, el resumen ejecutivo, las cifras del trimestre, los cambios del trimestre, las holguras fiscales y el gráfico de proyecciones.</p>
+      </div>
+    </div>
+
+    <div class="mm-step">
+      <div class="mm-num">3</div>
+      <div>
+        <h4>Revisar el resultado</h4>
+        <p>Verificar que la nueva pestaña aparezca primera (más reciente a la izquierda), que las cifras y las variaciones respecto del informe anterior estén correctas, y que el gráfico muestre las cuatro métricas.</p>
+      </div>
+    </div>
+
+    <div class="mm-step">
+      <div class="mm-num">4</div>
+      <div>
+        <h4>Publicar y guardar</h4>
+        <p>Guardar el archivo como <code>index.html</code>, subirlo al repositorio de GitHub (MFO-Tracker) para actualizar la versión publicada, y dejar una copia en <code>G:\Unidades compartidas\MFO-Dashboards\Monitores\Estrategia</code>.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -371,8 +456,45 @@ const DEFS = {
 function ttHTML(key){
   const d = DEFS[key];
   if(!d) return "";
-  return `<span class="tt-wrap"><span class="tt-icon">i</span><span class="tt-box"><span class="tt-title">${d.title}</span><span class="tt-def">${d.text}</span></span></span>`;
+  return `<span class="tt-wrap" tabindex="0" role="button" aria-label="${d.title}"><span class="tt-icon">i</span><span class="tt-box"><span class="tt-title">${d.title}</span><span class="tt-def">${d.text}</span></span></span>`;
 }
+
+/* ---- Tooltips: hover en desktop + click/tap en móvil, con volteo en el borde derecho ---- */
+function positionTooltip(wrap){
+  wrap.classList.remove("tt-left");
+  const box = wrap.querySelector(".tt-box");
+  if(!box) return;
+  const r = wrap.getBoundingClientRect();
+  const w = box.offsetWidth || 230;
+  if(r.left + w + 16 > window.innerWidth) wrap.classList.add("tt-left");
+}
+function closeAllTooltips(except){
+  document.querySelectorAll(".tt-wrap.tt-open").forEach(el=>{
+    if(el !== except) el.classList.remove("tt-open");
+  });
+}
+document.addEventListener("mouseover", e=>{
+  const wrap = e.target.closest && e.target.closest(".tt-wrap");
+  if(wrap) positionTooltip(wrap);
+});
+document.addEventListener("click", e=>{
+  const wrap = e.target.closest && e.target.closest(".tt-wrap");
+  if(!wrap){ closeAllTooltips(null); return; }
+  e.preventDefault();
+  e.stopPropagation();
+  const open = wrap.classList.contains("tt-open");
+  closeAllTooltips(wrap);
+  if(open){ wrap.classList.remove("tt-open"); }
+  else { positionTooltip(wrap); wrap.classList.add("tt-open"); }
+});
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape"){ closeAllTooltips(null); return; }
+  if(e.key === "Enter" || e.key === " "){
+    const wrap = e.target.closest && e.target.closest(".tt-wrap");
+    if(wrap){ e.preventDefault(); wrap.click(); }
+  }
+});
+window.addEventListener("resize", ()=>closeAllTooltips(null));
 
 const REPORTS = {
   "1T26": {
@@ -502,9 +624,9 @@ function renderMeta(){
 
   document.getElementById("infoPublicaBox").innerHTML = `
     <div class="ip-title">Información pública</div>
-    <div class="ip-line">Periodicidad: Trimestral (IFP)</div>
-    <div class="ip-line">Última actualización: ${r.published}</div>
-    <div class="ip-line">Fuente: Dirección de Presupuestos ↗</div>
+    <div class="ip-line">Periodicidad: <b>Trimestral (IFP)</b></div>
+    <div class="ip-line">Última actualización: <b>${r.published}</b></div>
+    <div class="ip-line">Fuente: <b>Dirección de Presupuestos (Dipres)</b></div>
   `;
 }
 
@@ -633,9 +755,17 @@ function renderChart(){
     options:{
       responsive:true,
       maintainAspectRatio:false,
+      interaction:{ mode:"index", intersect:false, axis:"x" },
+      hover:{ mode:"index", intersect:false },
+      elements:{ point:{ radius:5, hoverRadius:8, hitRadius:14, borderWidth:2, hoverBorderWidth:2 } },
       plugins:{ legend:{display:false}, tooltip:{
+        enabled:true, mode:"index", intersect:false,
+        displayColors:true, usePointStyle:true, caretPadding:8, cornerRadius:6,
         backgroundColor:"#1B2127", padding:10, titleFont:{family:"Aller"}, bodyFont:{family:"Aller"},
-        callbacks:{ label:(ctx)=> ` ${ctx.dataset.label}: ${Number(ctx.parsed.y).toFixed(1)}%` }
+        callbacks:{
+          title:(items)=> items.length ? String(items[0].label) : "",
+          label:(ctx)=> (ctx.parsed.y===null||ctx.parsed.y===undefined) ? null : ` ${ctx.dataset.label}: ${Number(ctx.parsed.y).toFixed(1)}%`
+        }
       }},
       scales:{
         y:{ grid:{color:"#EEF1F3"}, ticks:{ font:{family:"Aller"}, callback:(v)=>Number(v).toFixed(1)+"%" } },
@@ -680,7 +810,6 @@ function renderDirector(){
 
 function renderExecSummary(){
   const r = REPORTS[currentQuarter];
-  document.getElementById("execSummarySub").textContent = `Síntesis propia de los títulos del resumen ejecutivo — IFP ${r.label}`;
   const box = document.getElementById("execSummaryBox");
   box.innerHTML = `<div class="exec-summary-list">` + r.execSummary.map(e=>`
     <div class="exec-card">
@@ -703,41 +832,19 @@ function renderAll(){
 
 loadState().then(renderAll);
 
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') document.getElementById('updateModal').classList.remove('open');
-});
+/* ---- Manual de actualización ---- */
+(function(){
+  const overlay = document.getElementById("manualOverlay");
+  const btn = document.getElementById("manualBtn");
+  const closeBtn = document.getElementById("manualClose");
+  if(!overlay || !btn) return;
+  function open(){ overlay.classList.add("open"); document.body.style.overflow="hidden"; }
+  function close(){ overlay.classList.remove("open"); document.body.style.overflow=""; }
+  btn.addEventListener("click", e=>{ e.stopPropagation(); open(); });
+  closeBtn && closeBtn.addEventListener("click", close);
+  overlay.addEventListener("click", e=>{ if(e.target === overlay) close(); });
+  document.addEventListener("keydown", e=>{ if(e.key === "Escape") close(); });
+})();
 </script>
-
-<div class="modal-overlay" id="updateModal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('updateModal').classList.remove('open')">✕</button>
-    <div class="modal-title">Manual de actualización</div>
-    <div class="modal-sub">Cómo incorporar un nuevo Informe de Finanzas Públicas al tracker. Toma unos minutos y se hace una vez por trimestre.</div>
-
-    <div class="modal-step">
-      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">1.</div>
-      <div class="modal-step-body"><b>Descargar el PDF.</b> Dipres publica el IFP cada trimestre en <a href="https://www.dipres.gob.cl/598/w3-propertyvalue-24862.html" target="_blank" rel="noopener">dipres.gob.cl</a>. Descargar el informe completo del trimestre nuevo (no el resumen ni las minutas).</div>
-    </div>
-
-    <div class="modal-step">
-      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">2.</div>
-      <div class="modal-step-body"><b>Subirlo al proyecto.</b> Abrir el proyecto del IFP Tracker en Claude y adjuntar el PDF a la conversación. No hace falta escribir instrucciones: el proyecto ya sabe qué hacer con un IFP nuevo.</div>
-    </div>
-
-    <div class="modal-step">
-      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">3.</div>
-      <div class="modal-step-body"><b>Se crea la pestaña del trimestre.</b> Claude identifica el trimestre, extrae las cifras y arma una pestaña nueva con todas las secciones: palabras del Director, resumen ejecutivo, KPIs con variación respecto del informe anterior, qué cambió, holguras fiscales y proyecciones. La pestaña más reciente queda a la izquierda y las anteriores se conservan intactas para comparar.</div>
-    </div>
-
-    <div class="modal-step">
-      <div style="font-size:12px;font-weight:700;color:#000;min-width:20px;flex-shrink:0;margin-top:1px">4.</div>
-      <div class="modal-step-body"><b>Subir el HTML a Google Drive: publicación final del monitor.</b> Una vez generado el HTML con todas sus hojas actualizadas, subir el archivo final a la siguiente ruta de la unidad compartida:<br><span class="modal-path">G:\Unidades compartidas\MFO-Dashboards\Monitores\Estrategia</span></div>
-    </div>
-
-    <hr class="modal-divider">
-    <div class="modal-note">El dashboard es un archivo HTML único y autocontenido: tipografías, estilos y datos viajan dentro del mismo archivo, así que basta con reemplazarlo en la carpeta para publicar la actualización.</div>
-  </div>
-</div>
-
 </body>
 </html>
