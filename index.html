@@ -582,6 +582,58 @@ const REPORTS = {
       text:"Las holguras fiscales proyectadas son <b>negativas durante todo 2027-2030</b> (entre -0,2% y -0,5% del PIB): el gasto ya comprometido supera el nivel compatible con las metas estructurales. No implican recortes automáticos, pero sí que <b>no hay espacio para nuevas iniciativas permanentes sin financiamiento</b>.",
       subtext:"Con el gasto actualmente comprometido —sin medidas adicionales— la deuda volvería a superar el 45% del PIB, llegando a 45,5% en 2030. Cumplir la meta y mantenerla bajo 45% requeriría contención, reasignación, eficiencia o mayores ingresos permanentes."
     }
+  },
+  "3T26": {
+    id:"3T26", label:"3T26", fullLabel:"Tercer Trimestre 2026",
+    prevLabel:"IFP 2T26", published:"octubre de 2026",
+    director:{
+      name:"José Pablo Gómez Meza", role:"Director de Presupuestos",
+      summary:"El Director presenta este informe como el contexto y el detalle del proyecto de ley de Presupuestos 2027, el primero de la actual administración y coincidente con el centenario de la Dipres. Señala que el presupuesto compatibiliza las urgencias de la población con la sostenibilidad fiscal, con énfasis en crecimiento, empleo y reconstrucción, seguridad, niñez y protección de los beneficios sociales. Destaca que el gasto crece 1,5% respecto del cierre proyectado de 2026, consistente con la regla de balance estructural y el límite prudencial de deuda, como primer paso de una senda que apunta a un déficit estructural de 1,5% del PIB en 2030. Subraya además la incorporación de la Programación Financiera de Mediano Plazo (PFMP), que por primera vez convierte el gasto proyectado en una planificación plurianual con prioridades de gobierno, y las modernizaciones en focalización de beneficios, monitoreo de eficiencia y modelos de proyección."
+    },
+    execSummary:[
+      {title:"Actualización del escenario macroeconómico y fiscal 2026", text:"El escenario internacional sigue marcado por el conflicto entre EE.UU. e Irán y el recrudecimiento de la guerra entre Rusia y Ucrania, con el petróleo elevado y el cobre en nuevos máximos. En lo nacional, el Imacec acumula a julio una caída de 0,4% anual y el crecimiento 2026 se revisa de 1,8% a 0,7%, por menor producción de cobre, los temporales entre Atacama y La Araucanía y revisiones de Cuentas Nacionales. Los ingresos suben $965.524 millones a $80.657.196 millones (21,9% del PIB) y el gasto $337.000 millones a $87.280.684 millones (23,7% del PIB). El déficit efectivo baja a 1,8% del PIB y el BCA a 2,3%, bajo la meta de 2,6%."},
+      {title:"Actualización del escenario macroeconómico y fiscal 2027", text:"Para 2027 se proyecta un crecimiento de 3,3% (+0,5 pp respecto del informe anterior), impulsado por la inversión y la recuperación de los sectores de recursos naturales, incorporando los efectos de la Ley de Reconstrucción. Los ingresos alcanzarían $84.424.236 millones (21,9% del PIB) y el gasto $91.175.816 millones, un alza real de 1,5% sobre el cierre proyectado de 2026. El déficit efectivo sería de 1,8% del PIB y el estructural de 1,8%, igual a la meta del Decreto N°486 de Política Fiscal. La deuda bruta cerraría 2027 en 42,5% del PIB, 1,0 pp bajo lo proyectado en el IFP 2T26."},
+      {title:"Actualización del escenario fiscal de mediano plazo: 2028-2031", text:"El informe incorpora por primera vez la Programación Financiera de Mediano Plazo (PFMP) y extiende el horizonte a 2028-2031. El BCA alcanzaría -2,2% del PIB en 2028, -2,5% en 2029, -2,8% en 2030 y -2,0% en 2031, por debajo de la trayectoria del Decreto N°486. Las holguras resultan negativas en todo el horizonte (-0,5%, -0,9%, -1,3% y -0,6% del PIB). La deuda bruta subiría de 43,5% en 2028 a 44,0% en 2029 y 2030, para bajar a 43,2% en 2031, manteniéndose bajo el nivel prudente de 45%."},
+      {title:"Escenarios alternativos y Sistema de Monitoreo y Evaluación", text:"Se construyen dos escenarios alternativos 2028-2031, de mayor y menor crecimiento. En el de mayor crecimiento la deuda terminaría en 41,8% del PIB en 2031; en el de menor crecimiento llegaría a 46,3%, superando el nivel prudente de 45% desde 2029. Las holguras siguen negativas en ambos. En paralelo, los programas condicionados por hallazgos del Sistema de Monitoreo y Evaluación reducen su presupuesto 18% promedio en el proyecto de ley 2027, y 35% los reformulados objetados técnicamente."}
+    ],
+    kpis:[
+      {label:"Crecimiento PIB 2026", defKey:"pib", value:"0,7%", vsLabel:"2T26: 1,8%", deltaText:"-1,1 pp", sign:"neg"},
+      {label:"Ingresos efectivos 2026", defKey:"ingresos", value:"$80.657.196", unit:"MM · 21,9% del PIB", vsLabel:"2T26: 21,9% del PIB", deltaText:"+$965.524 MM", sign:"pos"},
+      {label:"Gasto comprometido 2026", defKey:"gasto", value:"$87.280.684", unit:"MM · 23,7% del PIB", vsLabel:"2T26: 23,9% del PIB", deltaText:"+$337.000 MM", sign:"neg"},
+      {label:"Balance efectivo 2026", defKey:"balEf", value:"-1,8%", unit:"del PIB", vsLabel:"2T26: -2,0%", deltaText:"+0,2 pp", sign:"pos"},
+      {label:"Balance estructural 2026", defKey:"balEst", value:"-2,3%", unit:"del PIB", vsLabel:"Meta vigente: -2,6%", deltaText:"Bajo la meta", sign:"pos"},
+      {label:"Deuda bruta (cierre 2026 p)", defKey:"deuda", value:"42,7%", unit:"del PIB", vsLabel:"$157.511.633 MM", deltaText:"Sin cambios vs. 2T26", sign:"neutral"}
+    ],
+    changes:[
+      {tag:"Actividad", text:"El crecimiento 2026 se revisa <b>de 1,8% a 0,7%</b>, por una producción de cobre bajo lo previsto (PIB minero -3,3%), los temporales entre Atacama y La Araucanía y revisiones de Cuentas Nacionales.", sign:"neg"},
+      {tag:"Presupuesto 2027", text:"Se presenta el primer proyecto de ley de Presupuestos de la administración, con un gasto que crece <b>1,5% real</b> sobre el cierre proyectado de 2026 y un déficit estructural de 1,8% del PIB, igual a la meta del Decreto N°486.", sign:"neutral"},
+      {tag:"Ingresos", text:"Los ingresos efectivos 2026 suben <b>$965.524 millones</b> a $80.657.196 millones (21,9% del PIB), por mayor recaudación minera y la mejor cobranza del CAE por parte de Tesorería.", sign:"pos"},
+      {tag:"Gasto", text:"El gasto 2026 aumenta <b>$337.000 millones</b> a $87.280.684 millones (23,7% del PIB), incorporando los recursos del Plan de Reactivación y Empleo.", sign:"neg"},
+      {tag:"Balance", text:"El déficit efectivo 2026 baja a <b>1,8% del PIB</b> y el balance cíclicamente ajustado a 2,3%, por debajo de la meta de 2,6% fijada para el año.", sign:"pos"},
+      {tag:"Deuda", text:"La deuda bruta cierra 2026 en <b>42,7% del PIB</b>, igual a lo proyectado. Para 2030 se revisa a la baja 1,5 pp, de 45,5% a <b>44,0%</b>, por menores requerimientos bajo la línea y mayor PIB nominal.", sign:"pos"},
+      {tag:"Mediano plazo", text:"El horizonte pasa a <b>2028-2031</b> e incorpora por primera vez la Programación Financiera de Mediano Plazo (PFMP), con un gasto plurianual formulado por los servicios en vez de una estimación pasiva de gasto comprometido.", sign:"neutral"}
+    ],
+    projection:{
+      years:[2028,2029,2030,2031],
+      series:{
+        pib:{prev:[2.2,2.2,2.1,null], base:[2.8,3.2,3.5,3.5], alt:[3.1,3.3,3.7,4.0], alt2:[2.4,2.4,2.6,2.8]},
+        balEf:{prev:[-1.8,-1.6,-1.3,null], base:[-2.0,-2.2,-2.1,-1.1], alt:[-1.9,-2.0,-2.0,-0.9], alt2:[-2.2,-2.5,-2.6,-1.8]},
+        balEst:{prev:[-2.2,-2.0,-1.7,null], base:[-2.2,-2.5,-2.8,-2.0], alt:null, alt2:null},
+        deuda:{prev:[44.5,45.3,45.5,null], base:[43.5,44.0,44.0,43.2], alt:[42.8,43.2,42.9,41.8], alt2:[44.2,45.4,46.2,46.3]}
+      }
+    },
+    altLabel:"Mayor crecimiento",
+    alt2Label:"Menor crecimiento",
+    projNote:"Base = escenario oficial del IFP 3T26. Mayor y menor crecimiento = escenarios alternativos de sensibilidad del Capítulo III. Informe anterior = IFP 2T26 (sin proyección para 2031).",
+    keyNote:{
+      headline:"2026 cierra mejor de lo previsto, pero el mediano plazo se tensiona",
+      body:"El balance estructural 2026 queda en -2,3% del PIB, bajo la meta de -2,6%, y la deuda 2030 se revisa 1,5 pp a la baja. Sin embargo, el BCA proyectado para 2028-2031 (-2,2%, -2,5%, -2,8% y -2,0% del PIB) se ubica <b>sistemáticamente por debajo de la trayectoria del Decreto N°486</b> (-1,7%, -1,6% y -1,5%), y las holguras se vuelven más negativas hasta 2030. El alivio de corto plazo convive con una brecha de mediano plazo que se amplía.",
+      note:"Lectura propia a partir de los Cuadros 2, 6 y 8 del IFP 3T26 — no es una cita textual del informe."
+    },
+    holguras:{
+      text:"Las holguras fiscales son <b>negativas en todo el horizonte 2028-2031</b>: -0,5% del PIB en 2028, -0,9% en 2029, -1,3% en 2030 y -0,6% en 2031. El gasto de mediano plazo supera al nivel compatible con las metas estructurales en US$2.136, US$4.369, US$6.390 y US$3.360 millones, respectivamente.",
+      subtext:"El informe advierte que estas cifras no deben leerse como ajustes mecánicos del gasto: su magnitud varía con los parámetros estructurales, los ingresos proyectados y el escenario macroeconómico, y su cierre puede venir de medidas de ingresos, de gasto o de ambas. En los escenarios alternativos de mayor y menor crecimiento las holguras también permanecen negativas."
+    }
   }
 };
 const METRICS = [
@@ -616,7 +668,7 @@ function renderTabs(){
 function renderMeta(){
   const r = REPORTS[currentQuarter];
   document.getElementById("metaRow").innerHTML =
-    `<span><b>${r.fullLabel}</b></span><span>Publicado el ${r.published}</span><span>Comparado contra ${r.prevLabel}</span>`;
+    `<span><b>${r.fullLabel}</b></span><span>Publicado ${/^\d/.test(r.published)?"el":"en"} ${r.published}</span><span>Comparado contra ${r.prevLabel}</span>`;
   document.getElementById("kpiSub").textContent = `Principales cifras fiscales 2026, ${r.fullLabel} vs. ${r.prevLabel}`;
   document.getElementById("changeSub").textContent = `Revisiones y novedades respecto del informe anterior (${r.prevLabel})`;
   document.getElementById("projSub").textContent = "Escenarios macro-fiscales de mediano plazo";
@@ -707,7 +759,7 @@ function renderChart(){
   const s = r.projection.series[currentMetric];
   const years = r.projection.years;
   const datasets = [];
-  const colors = { prev:"#9aa7ae", base:"#7BC143", alt:"#E07F5C", comprometido:"#E07F5C", umbral:"#B5C1CB" };
+  const colors = { prev:"#9aa7ae", base:"#7BC143", alt:"#E07F5C", comprometido:"#E07F5C", alt2:"#5D7082", umbral:"#B5C1CB" };
 
   if(currentMetric === "deuda" && s.comprometido){
     datasets.push({label:`${r.label} · Con meta / contención`, data:s.base, borderColor:colors.base, backgroundColor:colors.base,
@@ -726,8 +778,16 @@ function renderChart(){
         borderWidth:3, pointRadius:4, tension:0.25});
     }
     if(s.alt){
-      datasets.push({label:`${r.label} · Alternativo`, data:s.alt, borderColor:colors.alt, backgroundColor:colors.alt,
+      datasets.push({label:`${r.label} · ${r.altLabel || "Alternativo"}`, data:s.alt, borderColor:colors.alt, backgroundColor:colors.alt,
         borderDash:[2,3], borderWidth:2.5, pointRadius:3, tension:0.25});
+    }
+    if(s.alt2){
+      datasets.push({label:`${r.label} · ${r.alt2Label || "Alternativo 2"}`, data:s.alt2, borderColor:colors.alt2, backgroundColor:colors.alt2,
+        borderDash:[6,3], borderWidth:2.5, pointRadius:3, tension:0.25});
+    }
+    if(currentMetric === "deuda" && datasets.length){
+      datasets.push({label:"Nivel prudente 45%", data:years.map(()=>45), borderColor:colors.umbral, backgroundColor:colors.umbral,
+        borderDash:[6,4], borderWidth:1.5, pointRadius:0, tension:0});
     }
   }
 
