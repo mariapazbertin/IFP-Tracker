@@ -626,9 +626,8 @@ const REPORTS = {
     alt2Label:"Menor crecimiento",
     projNote:"Base = escenario oficial del IFP 3T26. Mayor y menor crecimiento = escenarios alternativos de sensibilidad del Capítulo III. Informe anterior = IFP 2T26 (sin proyección para 2031).",
     keyNote:{
-      headline:"2026 cierra mejor de lo previsto, pero el mediano plazo se tensiona",
+      headline:"2026 cierra mejor de lo previsto",
       body:"El balance estructural 2026 queda en -2,3% del PIB, bajo la meta de -2,6%, y la deuda 2030 se revisa 1,5 pp a la baja. Sin embargo, el BCA proyectado para 2028-2031 (-2,2%, -2,5%, -2,8% y -2,0% del PIB) se ubica <b>sistemáticamente por debajo de la trayectoria del Decreto N°486</b> (-1,7%, -1,6% y -1,5%), y las holguras se vuelven más negativas hasta 2030. El alivio de corto plazo convive con una brecha de mediano plazo que se amplía.",
-      note:"Lectura propia a partir de los Cuadros 2, 6 y 8 del IFP 3T26 — no es una cita textual del informe."
     },
     holguras:{
       text:"Las holguras fiscales son <b>negativas en todo el horizonte 2028-2031</b>: -0,5% del PIB en 2028, -0,9% en 2029, -1,3% en 2030 y -0,6% en 2031. El gasto de mediano plazo supera al nivel compatible con las metas estructurales en US$2.136, US$4.369, US$6.390 y US$3.360 millones, respectivamente.",
@@ -706,7 +705,7 @@ function renderKpis(){
       <div class="key-note">
         <div class="kn-head">${r.keyNote.headline}</div>
         <div class="kn-body">${r.keyNote.body}</div>
-        <div class="kn-foot">${r.keyNote.note}</div>
+        ${r.keyNote.note ? `<div class="kn-foot">${r.keyNote.note}</div>` : ""}
       </div>`;
   } else { knBox.innerHTML = ""; }
 }
